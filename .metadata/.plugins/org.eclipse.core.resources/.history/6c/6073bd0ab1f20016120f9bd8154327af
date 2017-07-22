@@ -1,0 +1,7 @@
+package com.taotao.service.impl;
+
+import com.taotao.service.ItemCatService;
+
+public class ItemCatServiceImpl implements ItemCatService{
+
+}

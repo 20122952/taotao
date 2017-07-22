@@ -1,0 +1,59 @@
+package com.taotao.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.taotao.common.pojo.EasyUIDataGridResult;
+import com.taotao.mapper.TbItemMapper;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemExample;
+import com.taotao.pojo.TbItemExample.Criteria;
+import com.taotao.service.ItemService;
+
+/*
+ * 20170212
+ * 宁哲峰
+ * 
+ */
+@Service
+public class ItemServiceImpl implements ItemService{
+	
+	@Autowired
+	private TbItemMapper itemMapper;
+
+	@Override
+	public TbItem getItemById(Long itemid) {
+	//	TbItem item = itemMapper.selectByPrimaryKey(itemid);
+		TbItemExample example = new TbItemExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andIdEqualTo(itemid);
+		List<TbItem> list = itemMapper.selectByExample(example);
+		TbItem item = null;
+		if(list != null && list.size()>0){
+			item = list.get(0);
+		}
+		return item;
+	}
+
+	@Override
+	public EasyUIDataGridResult getItemList(int page, int rows) {
+		//分液处理
+		PageHelper.startPage(page, rows);
+		//执行查询
+		TbItemExample example = new TbItemExample();
+		List<TbItem> list = itemMapper.selectByExample(example);
+		//取分页信息
+		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
+		//返回处理结果集
+		EasyUIDataGridResult result = new EasyUIDataGridResult();
+		result.setTotal(pageInfo.getTotal());
+		result.setRows(list);
+		
+		return result;
+	}
+
+}

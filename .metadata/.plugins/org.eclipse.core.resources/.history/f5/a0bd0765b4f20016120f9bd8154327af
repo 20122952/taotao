@@ -1,0 +1,12 @@
+package com.taotao.controller;
+
+import org.springframework.stereotype.Controller;
+
+/*
+ * 20170214
+ * 宁哲峰
+ */
+@Controller
+public class ItemCatController {
+
+}

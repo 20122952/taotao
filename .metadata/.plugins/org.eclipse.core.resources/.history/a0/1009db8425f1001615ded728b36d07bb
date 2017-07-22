@@ -1,0 +1,13 @@
+package com.taotao.controller;
+
+import org.springframework.stereotype.Controller;
+
+/*商品查询Controller
+ * 20170212
+ * 
+ */
+
+@Controller
+public class ItemController {
+
+}

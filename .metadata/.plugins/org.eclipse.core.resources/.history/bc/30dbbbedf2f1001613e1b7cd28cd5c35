@@ -1,0 +1,28 @@
+package com.taotao.pagehelper;
+
+import java.applet.AppletContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.github.pagehelper.PageHelper;
+import com.taotao.mapper.TbItemMapper;
+import com.taotao.pojo.TbItemExample;
+
+public class TestPageHelper {
+	
+	
+	public void testPageHelper(){
+		//1创建一个spring容器
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext-*.xml");
+		//2 从spring容器中获得Mapper的代理对象
+		TbItemMapper itemMapper = applicationContext.getBean(TbItemMapper.class);
+		//3设置分页信息
+		PageHelper.startPage(1, 30);
+		//4执行查询
+		List<TbItem> list = itemMapper.selectByExample(new TbItemExample());
+		
+		//取查询结果
+	}
+
+}

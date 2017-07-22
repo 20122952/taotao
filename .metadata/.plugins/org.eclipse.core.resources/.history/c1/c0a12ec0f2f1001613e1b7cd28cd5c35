@@ -1,0 +1,24 @@
+package com.taotao.pagehelper;
+
+import java.applet.AppletContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestPageHelper {
+	
+	
+	public void testPageHelper(){
+		//1创建一个spring容器
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext-*.xml");
+		//2 从spring容器中获得Mapper的代理对象
+		
+		//3设置分页信息
+		
+		//4执行查询
+		
+		
+		//取查询结果
+	}
+
+}

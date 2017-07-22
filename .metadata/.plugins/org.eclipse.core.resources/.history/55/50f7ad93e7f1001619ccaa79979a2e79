@@ -1,0 +1,9 @@
+package com.taotao.controller;
+
+/*
+ * 页面跳转
+ */
+public class PageController {
+
+	
+}

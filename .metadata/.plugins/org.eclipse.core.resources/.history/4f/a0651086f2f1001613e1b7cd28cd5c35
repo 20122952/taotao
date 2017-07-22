@@ -1,0 +1,17 @@
+package com.taotao.pagehelper;
+
+import java.applet.AppletContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestPageHelper {
+	
+	
+	public void testPageHelper(){
+		//1
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/");
+		
+	}
+
+}

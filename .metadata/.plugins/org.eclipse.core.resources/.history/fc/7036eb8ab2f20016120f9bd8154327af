@@ -1,0 +1,16 @@
+package com.taotao.service.impl;
+
+import java.util.List;
+
+import com.taotao.common.pojo.EasyUITreeNode;
+import com.taotao.service.ItemCatService;
+
+public class ItemCatServiceImpl implements ItemCatService{
+
+	@Override
+	public List<EasyUITreeNode> getItemCatList(long parentId) {
+		
+		return null;
+	}
+
+}
